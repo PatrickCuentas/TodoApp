@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCompletedTasks } from "../features/TaskSlice";
+import { deleteCompletedTasks } from "../features/taskSlice.jsx";
 import { getTaskListByFilter } from "../utils/getTaskListByFilter";
 import { getUncompletedTasksLength } from "../utils/getUncompletedTasksLength";
 
