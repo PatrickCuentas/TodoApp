@@ -3,10 +3,10 @@ import classnames from "classnames";
 export const Header = ({ theme }) => {
   const className = classnames(
     {
-      light: theme === "light",
-      dark: theme === "dark",
+      light: theme === "LIGHT",
+      dark: theme === "DARK",
     },
-    "absolute","z-[-1]"
+    "absolute",
   );
 
   return <header className={className}></header>;
