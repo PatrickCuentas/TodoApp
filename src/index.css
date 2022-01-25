@@ -5,15 +5,48 @@
 @layer base {
   html,
   body {
-    font-size: 18px;
+    font-size: 16px;
     @apply font-sans;
   }
 }
 
 @layer components {
+  /** Formulario **/
+  .input-box {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #a0a0a0 !important;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .gradient-round {
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  }
+
+  /** TaskItem **/
+  .checkbox-round {
+    min-width: 1.3em;
+    min-height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd !important;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .checkbox-round:checked {
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  }
 }
 
 @layer utilities {
+  /** Header **/
+
   header {
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,8 +70,17 @@
       background-image: url("../images/bg-desktop-dark.jpg");
     }
   }
-}
 
-/* const style = {
-    background: "linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
-  }; */
+  /** Formulario **/
+
+  .input-box input {
+    flex-grow: 1;
+    background: #fff;
+    border: none;
+    outline: none;
+  }
+
+  .input-box:focus-within {
+    border-color: #777;
+  }
+}
