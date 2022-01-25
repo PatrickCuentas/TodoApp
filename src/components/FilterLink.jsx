@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
-import { setVisibilityFilter } from "../features/TaskSlice";
+import { setVisibilityFilter } from "../features/taskSlice.jsx";
 
 export const FilterLink = ({ children, filter }) => {
   const dispatch = useDispatch();
