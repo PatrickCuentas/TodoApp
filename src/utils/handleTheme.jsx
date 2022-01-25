@@ -1,10 +1,5 @@
-export const handleTheme = ([ themeMode, setThemeMode ]) => {
+export const handleTheme = (themeMode, dispatch, toogleThemeMode) => {
   const htmlEl = document.querySelector("html");
-  if (themeMode === "dark") {
-    setThemeMode("light");
-    htmlEl.classList = "";
-  } else {
-    setThemeMode("dark");
-    htmlEl.classList = "dark";
-  }
+  themeMode === "DARK" ? (htmlEl.classList = "") : (htmlEl.classList = "dark");
+  dispatch(toogleThemeMode());
 };
