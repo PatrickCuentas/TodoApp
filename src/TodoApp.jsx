@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toogleThemeMode } from "./features/themeSlice";
 import { handleTheme } from "./utils/handleTheme";
 import { useEffect } from "react";
+import classNames from "classnames";
 
 export const TodoApp = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,17 @@ export const TodoApp = () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  const containerClassNames = classNames(
+    "relative",
+    "bg-light-theme-bg",
+    "dark:bg-dark-theme-bg",
+    {
+      "h-screen": tasks.length < 8,
+    }
+  );
+
   return (
-    <div className="relative h-screen bg-light-theme-bg dark:bg-dark-theme-bg">
+    <div className={containerClassNames}>
       <Header theme={themeMode} />
       <main className="max-w-xl mx-auto py-10 px-5 relative">
         <div className="flex flex-wrap justify-between items-center">
