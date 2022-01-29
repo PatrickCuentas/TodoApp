@@ -24,7 +24,7 @@ export const TodoApp = () => {
     "bg-light-theme-bg",
     "dark:bg-dark-theme-bg",
     {
-      "h-screen": tasks.length < 8,
+      "h-screen": tasks.length < 7,
     }
   );
 
