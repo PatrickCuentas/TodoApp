@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { CrossIcon } from "../svgs/CrossIcon";
 import { BiCheck } from "react-icons/bi";
@@ -8,7 +7,6 @@ import { deleteTask, toogleCompletedTask } from "../features/taskSlice";
 
 export const TaskItem = ({ task, index }) => {
   const dispatch = useDispatch();
-  const tasks = useSelector((state) => state.task.tasks);
   const { description, completed } = task;
   const classNameLI = classNames(
     "p-5",
