@@ -19,7 +19,8 @@ export const TaskItem = ({ task, index }) => {
     "flex",
     "flex-wrap",
     "items-center",
-    "justify-between"
+    "justify-between",
+    "cursor-move"
   );
 
   const classNameICON = classNames("absolute", "text-[#fff]", {
@@ -45,28 +46,28 @@ export const TaskItem = ({ task, index }) => {
   };
 
   return (
-    <li className={classNameLI}>
-      <div className="flex flex-wrap items-center">
-        <button onClick={handleToogleCompleted} className={classNameButtonICON}>
-          {completed && (
-            <IconContext.Provider value={{ className: classNameICON }}>
-              <BiCheck />
-            </IconContext.Provider>
-          )}
+      <li className={classNameLI} >
+        <div className="flex flex-wrap items-center">
+          <button onClick={handleToogleCompleted} className={classNameButtonICON}>
+            {completed && (
+              <IconContext.Provider value={{ className: classNameICON }}>
+                <BiCheck />
+              </IconContext.Provider>
+            )}
+          </button>
+          <p
+            className={`text-[14px] md:text-base ${
+              completed
+                ? "line-through text-light-theme-clr-task-completed dark:text-dark-theme-clr-task-completed"
+                : "text-light-theme-clr-task-active dark:text-dark-theme-clr-task-active"
+            }`}
+          >
+            {description}
+          </p>
+        </div>
+        <button onClick={handleDeleteTask}>
+          <CrossIcon />
         </button>
-        <p
-          className={`text-[14px] md:text-base ${
-            completed
-              ? "line-through text-light-theme-clr-task-completed dark:text-dark-theme-clr-task-completed"
-              : "text-light-theme-clr-task-active dark:text-dark-theme-clr-task-active"
-          }`}
-        >
-          {description}
-        </p>
-      </div>
-      <button onClick={handleDeleteTask}>
-        <CrossIcon />
-      </button>
-    </li>
+      </li>
   );
 };
