@@ -3,9 +3,38 @@ import { createSlice } from "@reduxjs/toolkit";
 const getLocalStorageItem = (key) => {
   return (
     JSON.parse(localStorage.getItem(key)) || [
-      { id: 1, description: "Drink Water", completed: false },
+      {
+        id: 1,
+        description: 'Complete online Javascript Course',
+        completed: true,
+      },
+      {
+        id: 2,
+        description: 'Jog around the park 3x',
+        completed: false,
+      },
+      {
+        id: 3,
+        description: '10 minutes meditation',
+        completed: false,
+      },
+      {
+        id: 4,
+        description: 'Read for 1 hour',
+        completed: false,
+      },
+      {
+        id: 5,
+        description: 'Pickup groceries',
+        completed: false,
+      },
+      {
+        id: 6,
+        description: 'Complete Todo App on Frontend Mentor',
+        completed: false,
+      },
     ]
-  );
+  )
 };
 
 const initialState = {
