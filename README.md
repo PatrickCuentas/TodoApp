@@ -77,8 +77,9 @@ To see how you can add code snippets, see below:
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+* {
+    transition: background-color 0.2s ease-in-out, background 0.2s ease-in-out,
+        color 0.2s ease-in-out;
 }
 ```
 
