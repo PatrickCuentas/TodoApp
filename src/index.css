@@ -6,6 +6,7 @@
   html,
   body {
     font-size: 16px;
+    height: 100vh;
     @apply font-sans;
   }
 }
@@ -16,8 +17,7 @@
     display: flex;
     align-items: center;
     background: #fff;
-    border: 1px solid #a0a0a0 !important;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
   }
 
@@ -27,8 +27,8 @@
 
   /** TaskItem **/
   .checkbox-round {
-    min-width: 1.3em;
-    min-height: 1.3em;
+    min-width: 1.45em;
+    min-height: 1.45em;
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
@@ -49,25 +49,28 @@
 
   header {
     background-size: cover;
-    background-repeat: no-repeat;
     min-height: 200px;
     width: 100%;
   }
   .light {
-    background-image: url("../images/bg-mobile-light.jpg");
+    background-image: url('../images/bg-mobile-light.jpg');
+    background-repeat: no-repeat;
+    @apply bg-light-theme-bg;
   }
   .dark {
-    background-image: url("../images/bg-mobile-dark.jpg");
+    background-image: url('../images/bg-mobile-dark.jpg');
+    background-repeat: no-repeat;
+    @apply bg-dark-theme-bg;
   }
   @media screen and (min-width: 768px) {
     header {
       min-height: 300px;
     }
     .light {
-      background-image: url("../images/bg-desktop-light.jpg");
+      background-image: url('../images/bg-desktop-light.jpg');
     }
     .dark {
-      background-image: url("../images/bg-desktop-dark.jpg");
+      background-image: url('../images/bg-desktop-dark.jpg');
     }
   }
 
@@ -82,5 +85,14 @@
 
   .input-box:focus-within {
     border-color: #777;
+  }
+
+  /** Cursor**/
+  .dndclass {
+    cursor: url('../images/grab1.png'), auto;
+  }
+
+  .dndclass:active {
+    cursor: url('../images/grabbing1.png'), auto;
   }
 }

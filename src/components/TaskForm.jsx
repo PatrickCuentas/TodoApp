@@ -25,8 +25,8 @@ export const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-7">
-      <div className="input-box px-6 py-4 dark:bg-dark-theme-bg-input">
+    <form onSubmit={handleSubmit} className="mt-12">
+      <div className="input-box px-6 pt-5 pb-5 dark:bg-dark-theme-bg-input">
         <button
           type="submit"
           className="checkbox-round gradient-round transition-all animate-pulse"
@@ -34,11 +34,11 @@ export const TaskForm = () => {
         <input
           onChange={handleInputChange}
           value={inputValue}
-          className="font-normal font-sans ml-3 dark:bg-dark-theme-bg-input dark:text-[#fff]"
+          className="text-[16.2px] font-normal font-sans ml-6 -mt-1 dark:bg-dark-theme-bg-input dark:text-[#fff]"
           type="text"
           placeholder="Create a new todo..."
         />
       </div>
     </form>
-  );
+  )
 };
