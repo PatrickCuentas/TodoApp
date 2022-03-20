@@ -4,6 +4,7 @@ import { getUncompletedTasksLength } from '../utils/getUncompletedTasksLength'
 import GridLayout from 'react-grid-layout'
 import { useWindowResize } from '../hooks/useWindowResize.jsx'
 import { TaskItem } from './TaskItem.jsx'
+import { FilterLink } from './FilterLink.jsx'
 
 export const TaskItemContainer = () => {
   const INITIAL_SIZE = 576
@@ -57,6 +58,11 @@ export const TaskItemContainer = () => {
       <div className="p-5 md:p-6 flex flex-wrap justify-between text-light-theme-clr-primary dark:text-dark-theme-clr-primary">
         <div>
           <p>{getUncompletedTasksLength(tasks)} items left</p>
+        </div>
+        <div className="hidden lg:flex lg:flex-wrap lg:justify-center lg:gap-3">
+          <FilterLink filter="ALL">All</FilterLink>
+          <FilterLink filter="ACTIVE">Active</FilterLink>
+          <FilterLink filter="COMPLETED">Completed</FilterLink>
         </div>
         <div>
           <button onClick={handleDeleteCompletedTasks} className="font-normal">
