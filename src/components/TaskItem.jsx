@@ -19,7 +19,8 @@ export const TaskItem = ({ task, index }) => {
     'flex-wrap',
     'items-center',
     'justify-between',
-    'dndclass'
+    'dndclass',
+    'relative',
   )
 
   const classNameICON = classNames('absolute', 'text-[#fff]', {
@@ -35,6 +36,11 @@ export const TaskItem = ({ task, index }) => {
     'checkbox-round',
     { 'gradient-round': completed }
   )
+  
+  const classNameCrossICON = classNames(
+    'absolute',
+    'right-[17px],
+    )
 
   const handleToogleCompleted = () => {
     dispatch(toogleCompletedTask(index))
@@ -64,7 +70,7 @@ export const TaskItem = ({ task, index }) => {
           {description}
         </p>
       </div>
-      <button onClick={handleDeleteTask}>
+      <button onClick={handleDeleteTask} className={classNameCrossICON}>
         <CrossIcon />
       </button>
     </li>
