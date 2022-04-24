@@ -39,8 +39,8 @@ export const TaskItem = ({ task, index }) => {
   
   const classNameCrossICON = classNames(
     'absolute',
-    'right-[17px],
-    )
+    'right-[17px]',
+   )
 
   const handleToogleCompleted = () => {
     dispatch(toogleCompletedTask(index))
